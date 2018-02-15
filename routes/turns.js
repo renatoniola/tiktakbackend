@@ -10,6 +10,7 @@ module.exports = io => {
     console.log('accunt : ' , req.account)
 
     const { gameId , location , userId } = req.body
+
     Game.findById(gameId)
       .then((game) => {
 
@@ -22,7 +23,7 @@ module.exports = io => {
          }
       })
 
-      if( game.turn != playerIndex && game.grid[location] == 0) {
+      if( game.turn != playerIndex && game.grid[location] == null) {
 
         const newGrid = game.grid.slice()
 
@@ -49,6 +50,7 @@ module.exports = io => {
 
 
   })
+
 
   return router
 }

@@ -15,7 +15,7 @@ const playerSchema = new Schema({
 });
 
 const gameSchema = new Schema({
-  grid: { type : [] , default: [0,0,0,0,0,0,0,0,0] },
+  grid: { type : [] , default: [null,null,null,null,null,null,null,null,null] },
   players: [playerSchema],
   turn: { type: Number, default: 0 }, // player index
   started: { type: Boolean, default: false },
