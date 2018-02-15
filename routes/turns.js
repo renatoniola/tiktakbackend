@@ -27,7 +27,7 @@ module.exports = io => {
 
         const newGrid = game.grid.slice()
 
-        newGrid[location] = userId
+        newGrid[location] = playerIndex
 
         game.grid = newGrid
         game.turn = playerIndex
